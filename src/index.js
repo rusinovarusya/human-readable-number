@@ -23,12 +23,12 @@ module.exports = function toReadable (number) {
     if (!h && !d && u) return `${words[u]}`;
     if (!h && d && !u) return `${words[d * 10]}`;
     if (!h && d && u) {
-        if (d == 1)`${words[d * 10 + u]}`
+        if (d == 1) return `${words[d * 10 + u]}`
         else return `${words[d * 10]} ${words[u]}`;
     }
 
     if (h && !d && !u) {
-        return `${words[h]} hundred `;
+        return `${words[h]} hundred`;
     }
     if (h && !d && u) {
         return `${words[h]} hundred ${words[u]}`;
@@ -37,7 +37,7 @@ module.exports = function toReadable (number) {
         return `${words[h]} hundred ${words[d * 10]}`;
     }
     if (h && d && u) {
-        if (d == 1)`${words[h]} hundred ${words[d * 10 + u]}`;
+        if (d == 1) return `${words[h]} hundred ${words[d * 10 + u]}`;
         else return `${words[h]} hundred ${words[d * 10]} ${words[u]}`;
     }
 
