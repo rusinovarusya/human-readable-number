@@ -36,11 +36,11 @@ module.exports = function toReadable (number) {
         return `${words[h]} hundred ${words[u]}`;
     }
     if (!t && h && d && !u) {
-        return `${words[h]} hundred and ${words[d * 10]}`;
+        return `${words[h]} hundred ${words[d * 10]}`;
     }
     if (!t && h && d && u) {
-        if (d == 1)`${words[h]} hundred and ${words[d * 10 + u]}`;
-        else return `${words[h]} hundred and ${words[d * 10]} ${words[u]}`;
+        if (d == 1)`${words[h]} hundred ${words[d * 10 + u]}`;
+        else return `${words[h]} hundred ${words[d * 10]} ${words[u]}`;
     }
 
     if (t && !h && !d && !u) {
@@ -75,16 +75,16 @@ module.exports = function toReadable (number) {
         else return `${words[t]} thousands ${words[h]} hundred ${words[u]}`;
     }
     if (t && h && d && !u) {
-        if (t == 1) return `${words[t]} thousand ${words[h]} hundred and ${words[d * 10]}`;
-        else return `${words[t]} thousands ${words[h]} hundred and ${words[d * 10]}`;
+        if (t == 1) return `${words[t]} thousand ${words[h]} hundred ${words[d * 10]}`;
+        else return `${words[t]} thousands ${words[h]} hundred ${words[d * 10]}`;
     }
     if (t && h && d && u) {
         if (t == 1) {
-            if (d == 1) return `${words[t]} thousand ${words[h]} hundred and ${words[d * 10 + u]}`;
-            else return `${words[t]} thousand ${words[h]} hundred and ${words[d * 10]} ${words[u]}`;
+            if (d == 1) return `${words[t]} thousand ${words[h]} hundred ${words[d * 10 + u]}`;
+            else return `${words[t]} thousand ${words[h]} hundred ${words[d * 10]} ${words[u]}`;
         } else {
-            if (d == 1) return `${words[t]} thousands ${words[h]} hundred and ${words[d * 10 + u]}`;
-            else return `${words[t]} thousands ${words[h]} hundred and ${words[d * 10]} ${words[u]}`;
+            if (d == 1) return `${words[t]} thousands ${words[h]} hundred ${words[d * 10 + u]}`;
+            else return `${words[t]} thousands ${words[h]} hundred ${words[d * 10]} ${words[u]}`;
         }
     }
 
